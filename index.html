@@ -25,17 +25,17 @@
             </div>
         </div>
     </section>
-    <section v-show='!gameInProgress' class="row controls">
+    <section v-if='!gameInProgress' class="row controls">
         <div class="small-12 columns">
-            <button v-on:click='switchGameModeToTrue' id="start-game">START NEW GAME</button>
+            <button @click='switchGameModeToTrue' id="start-game">START NEW GAME</button>
         </div>
     </section>
-    <section v-show='gameInProgress' class="row controls">
+    <section v-else class="row controls">
         <div class="small-12 columns">
             <button id="attack">ATTACK</button>
             <button id="special-attack">SPECIAL ATTACK</button>
             <button id="heal">HEAL</button>
-            <button v-on:click='switchGameModeToFalse' id="give-up">GIVE UP</button>
+            <button @click='switchGameModeToFalse' id="give-up">GIVE UP</button>
         </div>
     </section>
     <section class="row log">
