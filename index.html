@@ -27,22 +27,25 @@
     </section>
     <section v-if='!gameInProgress' class="row controls">
         <div class="small-12 columns">
-            <button @click='switchGameModeToTrue' id="start-game">START NEW GAME</button>
+            <button @click='switchGameMode' id="start-game">START NEW GAME</button>
         </div>
     </section>
     <section v-else class="row controls">
         <div class="small-12 columns">
-            <button id="attack">ATTACK</button>
+            <button id="attack" @click='handleAttackClick'>ATTACK</button>
             <button id="special-attack">SPECIAL ATTACK</button>
             <button id="heal">HEAL</button>
-            <button @click='switchGameModeToFalse' id="give-up">GIVE UP</button>
+            <button id="give-up" @click='switchGameMode'>GIVE UP</button>
         </div>
     </section>
     <section class="row log">
         <div class="small-12 columns">
             <ul>
-                <li>
-
+                <li v-for='userAttackScore in userAttackScores'>
+                    User has attacked with {{ userAttackScore }} points
+                </li>
+                <li v-for='monsterAttackScore in monsterAttackScores'>
+                    Monster has attacked with {{ monsterAttackScore }} points
                 </li>
             </ul>
         </div>
