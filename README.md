@@ -1,2 +1,2 @@
-# Vue-Monster-Attach
+# Vue-Monster-Slayer
 Vue practice project
